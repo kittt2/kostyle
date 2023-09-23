@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const password = document.getElementById('password').value;
 
     try {
-      const response = await fetch('http://localhost:8000/signup', {
+      const response = await fetch('https://kostyle-7q3z.onrender.com/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const password = document.getElementById('login-password').value;
 
     try {
-      const response = await fetch('http://localhost:8000/login', {
+      const response = await fetch('https://kostyle-7q3z.onrender.com/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

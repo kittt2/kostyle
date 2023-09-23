@@ -81,43 +81,76 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
-
-
 document.getElementById('method1').addEventListener('submit', function (e) {
     e.preventDefault(); // Prevent form submission
-
-    // Perform form validation here (e.g., card number format, expiration date, CVV)
-
-    // If form is valid, navigate to the success page
     const cardNumber = document.getElementById('card_number').value;
     const cardHolder = document.getElementById('card_holder').value;
     const expirationDate = document.getElementById('expiration_date').value;
     const cvv = document.getElementById('cvv').value;
-    const amount = document.getElementById('amount').value;
 
+    const enteredAmount = parseFloat(document.getElementById('amount').value);
+
+    // Retrieve the total amount from the cart in local storage
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const totalAmountInCart = cart.reduce((acc, currentItem) => acc + currentItem.price, 0);
+    console.log(totalAmountInCart)
     if (cardNumber && cardHolder && expirationDate && cvv && amount) {
-        // Redirect to success.html
-        if (cardNumber && cardHolder && expirationDate && cvv && amount) {
-            const confirmation = confirm('Are you sure you want to make the payment?');
 
-            if (confirmation) {
-                // Redirect to the success page
-                window.location.href = 'http://127.0.0.1:5500/succes.html';
+        if (enteredAmount === totalAmountInCart) {
+          
+            
+                const confirmation = confirm(`Are you sure you want to make the payment?`);
+                if (confirmation) {  
+
+                window.location.href = 'http://127.0.0.1:5502/succes.html';
             }
+        } else {
+
+            alert(`Payment amount (${enteredAmount}) does not match the cart total (${totalAmountInCart}). Please pay the correct amount.`);
         }
-        // confirm(`you are paying for the items`)
-        // if(confirm==ok){
-      
-        // // }
-        // else{
-        //     window.location.href = 'http://127.0.0.1:5500/backend/public/cart1.html';
-        // }
-    } else {
+    }
+    else {
         // Show an error message or perform additional validation
         alert('Please fill in all required fields.');
     }
+
 });
+
+
+// document.getElementById('method1').addEventListener('submit', function (e) {
+//     e.preventDefault(); // Prevent form submission
+
+//     // Perform form validation here (e.g., card number format, expiration date, CVV)
+
+//     // If form is valid, navigate to the success page
+//     const cardNumber = document.getElementById('card_number').value;
+//     const cardHolder = document.getElementById('card_holder').value;
+//     const expirationDate = document.getElementById('expiration_date').value;
+//     const cvv = document.getElementById('cvv').value;
+//     const amount = document.getElementById('amount').value;
+
+//     if (cardNumber && cardHolder && expirationDate && cvv && amount) {
+//         // Redirect to success.html
+//         if (cardNumber && cardHolder && expirationDate && cvv && amount) {
+//             const confirmation = confirm('Are you sure you want to make the payment?');
+
+//             if (confirmation) {
+//                 // Redirect to the success page
+//                 window.location.href= '';
+//             }
+//         }
+//         // confirm(`you are paying for the items`)
+//         // if(confirm==ok){
+      
+//         // // }
+//         // else{
+//         //     window.location.href = 'http://127.0.0.1:5500/backend/public/cart1.html';
+//         // }
+//     } else {
+//         // Show an error message or perform additional validation
+//         alert('Please fill in all required fields.');
+//     }
+// });
 
 const bar = document.getElementById('bar');
 const nav = document.getElementById('navbar')

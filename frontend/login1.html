@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration and Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: whitesmoke;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+            flex-wrap: wrap;
+
+        }
+
+        .form-container {
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid black;
+            border-radius: 5px;
+            width: 300px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            outline: none;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #010912;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 10px;
+        }
+
+        button:hover {
+            background-color: aquamarine;
+            color: #fff;
+        }
+
+        #message {
+            text-align: center;
+            margin-top: 20px;
+            color: #ee1b1b;
+            font-size: 34px;
+            margin-bottom: 20px;
+        }
+
+        #bannerform img {
+            height: 550px;
+            width: 100%;
+        }
+
+        @media (max-width:499px) {
+            .container {
+           height: 60vh;
+
+            }
+        }
+            
+    </style>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+    <section id="header">
+        <a href="#"><img src="/img/Free_-removebg-preview.png" alt="" class="logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="main2.html">home</a></li>
+                <li><a href="login1.html">shop</a></li>
+                <li><a href="login1.html">blog</a></li>
+                <li><a class="active" href="login1.html">Registration</a></li>
+                <li><a href="about.html">about</a></li>
+                <li id="bag"><a  href="login1.html"><i class="fa fa-shopping-cart"
+                            aria-hidden="true"></i></a></li>
+                <a href="#" id="close"><i class="far fa-times"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart1.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+
+    </section>
+
+    <section>
+        <div id="bannerform">
+            <img src="https://images.bestsellerclothing.in/live/image/catalog/brandstore/bestseller/banners/vm_wedodenim_web_15092023.webp?sw=1600"
+                alt="">
+        </div>
+    </section>
+
+    <section id="feature" class="section-p1 ">
+        <div class="fe-box">
+            <img src="/img/features/f1.png" alt="">
+            <h6>free shiping</h6>
+        </div>
+        <div class="fe-box">
+            <img src="/img/features/f2.png" alt="">
+            <h6>free shiping</h6>
+        </div>
+        <div class="fe-box">
+            <img src="/img/features/f3.png" alt="">
+            <h6>free shiping</h6>
+        </div>
+        <div class="fe-box">
+            <img src="/img/features/f4.png" alt="">
+            <h6>free shiping</h6>
+        </div>
+        <div class="fe-box">
+            <img src="/img/features/f5.png" alt="">
+            <h6>free shiping</h6>
+        </div>
+        <div class="fe-box">
+            <img src="/img/features/f6.png" alt="">
+            <h6>free shiping</h6>
+        </div>
+
+    </section>
+
+
+
+    <div class="container">
+        <div class="form-container">
+            <h3>Sign Up</h3>
+            <form id="signup-form">
+                <input type="text" id="name" placeholder="Name" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container">
+            <h3>Login</h3>
+            <form id="login-form">
+                <input type="email" id="login-email" placeholder="Email" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+    <div id="message"></div>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img src="/img/Free_-removebg-preview.png" alt="">
+            <h4>contact</h4>
+            <p> <strong>Address</strong>: noida sec-15,block -d,utttar pradesh</p>
+            <p><strong>Phone</strong>:88-78-78-67-67</p>
+            <div class="follow">
+                <h4>follow us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-pinterest"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>about</h4>
+            <a href="#">about us</a>
+            <a href="#">Delivery information</a>
+            <a href="#">privacy policy</a>
+            <a href="#">terms & conditions</a>
+            <a href="#">Contact us</a>
+        </div>
+
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">sign in</a>
+            <a href="#">view caert</a>
+            <a href="#">my wishlist</a>
+            <a href="#">track my order</a>
+            <a href="#">help</a>
+        </div>
+
+        <div class="colinstall">
+            <h4>install app</h4>
+            <p>From App Store Or Google Play</p>
+            <div class="row">
+                <img src="/img/pay/app.jpg" alt="">
+                <img src="/img/pay/play.jpg" alt="">
+            </div>
+            <P>SECURED PAYTM GATEAWAYS</P>
+            <img src="/img/pay/pay.png" alt="">
+        </div>
+
+        <div class="new">
+            <span>©2023 Gashena. All rights reserve</span>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

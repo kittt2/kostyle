@@ -133,7 +133,7 @@ body {
 }
 
 #hero {
-    background-image: url("/img/hero4.png");
+    background-image: url("public/img/hero4.png");
 
     height: 90vh;
     width: 100%;
@@ -387,7 +387,7 @@ button.white:hover {
     padding: 20px;
     min-width: 30%;
     padding: 20px;
-    background-image: url("/img/banner/b16.jpg");
+    background-image: url("public/img/banner/b16.jpg");
     margin-bottom: 20px;
 }
 

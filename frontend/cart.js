@@ -102,7 +102,7 @@ document.getElementById('method1').addEventListener('submit', function (e) {
                 const confirmation = confirm(`Are you sure you want to make the payment?`);
                 if (confirmation) {  
 
-                window.location.href = 'http://127.0.0.1:5502/succes.html';
+                    window.open("succes.html");
             }
         } else {
 
@@ -167,5 +167,23 @@ if (close) {
         nav.classList.remove('active')
     })
 }
+
+
+
+        const bar1 = document.getElementById('bar1');
+        const nav1 = document.getElementById('navbar1')
+        const close1 = document.getElementById('close1');
+
+        if (bar1) {
+            bar1.addEventListener('click', () => {
+                nav1.classList.add('active')
+            })
+        }
+
+        if (close1) {
+            close1.addEventListener('click', () => {
+                nav1.classList.remove('active')
+            })
+        }
 
 

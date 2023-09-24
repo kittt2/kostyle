@@ -92,15 +92,38 @@ if (close) {
 }
 
 // Periodically ping the Express.js application's endpoint to prevent it from going to sleep
-const axios = require('axios'); // Use the axios library for making HTTP requests
-const intervalSeconds = 700; // Adjust this as needed (e.g., 600 seconds = 10 minutes)
+// const axios = require('axios'); // Use the axios library for making HTTP requests
+// const intervalSeconds = 700; // Adjust this as needed (e.g., 600 seconds = 10 minutes)
+
+// // URL of your Express.js application's endpoint to ping
+// const appUrl = 'https://kostyle-7q3z.onrender.com'; // Replace with your app's URL
+
+// function pingApplication() {
+//   axios
+//     .get(appUrl)
+//     .then((response) => {
+//       if (response.status === 200) {
+//         console.log(`Successfully pinged ${appUrl} at ${new Date().toLocaleString()}`);
+//       } else {
+//         console.error(`Failed to ping ${appUrl} - Status Code: ${response.status}`);
+//       }
+//     })
+//     .catch((error) => {
+//       console.error(`An error occurred: ${error.message}`);
+//     });
+// }
+
+// setInterval(pingApplication, intervalSeconds * 1000); // Convert seconds to milliseconds for setInterval
+
+
+// Periodically ping the Express.js application's endpoint to prevent it from going to sleep
+const intervalSeconds = 600; // Adjust this as needed (e.g., 600 seconds = 10 minutes)
 
 // URL of your Express.js application's endpoint to ping
 const appUrl = 'https://kostyle-7q3z.onrender.com'; // Replace with your app's URL
 
 function pingApplication() {
-  axios
-    .get(appUrl)
+  fetch(appUrl)
     .then((response) => {
       if (response.status === 200) {
         console.log(`Successfully pinged ${appUrl} at ${new Date().toLocaleString()}`);

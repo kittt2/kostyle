@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const password = document.getElementById('password').value;
 
     try {
+      alert(`please wait for some seconds we are registering your details (due to backend also deploy on cloud services its take time to connect on your first time)`);
       const response = await fetch('https://kostyle-7q3z.onrender.com/signup', {
         method: 'POST',
         headers: {
@@ -17,10 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         body: JSON.stringify({ name, email, password }),
       });
-
-      alert('Your account has been created and now please log in into your account.');
       const data = await response.json();
       message.textContent = data.msg;
+      alert(`${data.msg}`);
     } catch (error) {
       console.error(error);
     }
@@ -47,12 +47,14 @@ document.addEventListener('DOMContentLoaded', () => {
           console.log('Login form submitted');
           const data = await response.json();
           message.textContent = data.msg;
+          alert(`you are now login with ${data.email} `);
           const locate = window.location.href = 'main.html';
 
         } else if (response.status === 401) {
           // Handle invalid login attempt
           const data = await response.json();
           message.textContent = data.msg; // Display error message to the user
+          alert(`check your email and password please`);
 
         } 
         else if (response.status === 501) {
